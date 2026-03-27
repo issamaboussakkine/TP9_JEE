@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion - Issam ABOUSSAKKINE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .author {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #5a67d8;
+        }
+        .error {
+            background: #fee;
+            color: #c00;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 15px;
+            border: 1px solid #fcc;
+        }
+        .success {
+            background: #efe;
+            color: #2c5;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 15px;
+            border: 1px solid #cfc;
+        }
+        .info {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 11px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <h2>Authentification</h2>
+    <div class="author">Issam ABOUSSAKKINE</div>
+
+    <div th:if="${param.error}" class="error">
+        Identifiant ou mot de passe incorrect
+    </div>
+
+    <div th:if="${param.logout}" class="success">
+        Déconnexion réussie
+    </div>
+
+    <form th:action="@{/login}" method="post">
+        <div class="input-group">
+            <label>Nom d'utilisateur</label>
+            <input type="text" name="username" required>
+        </div>
+
+        <div class="input-group">
+            <label>Mot de passe</label>
+            <input type="password" name="password" required>
+        </div>
+
+        <button type="submit">Se connecter</button>
+    </form>
+
+    <div class="info">
+        <strong>Comptes de test</strong><br>
+        issam_admin / issam123 (Administrateur)<br>
+        issam_user / issam123 (Utilisateur)<br>
+        issam_manager / issam123 (Gestionnaire)
+    </div>
+
+    <div class="footer">
+        Issam ABOUSSAKKINE - TP Spring Security
+    </div>
+</div>
+</body>
+</html>
