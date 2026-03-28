@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<!-- Issam : Page d'accueil après connexion -->
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Accueil - Issam ABOUSSAKKINE</title>
     <style>
+        /* Issam : Styles personnalisés */
         body {
             font-family: Arial, sans-serif;
             background: #f0f2f5;
@@ -25,6 +27,7 @@
         .author {
             color: #666;
             margin-bottom: 20px;
+            font-style: italic;
         }
         .links {
             margin: 30px 0;
@@ -37,6 +40,7 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            transition: background 0.3s;
         }
         .links a:hover {
             background: #5a67d8;
@@ -51,29 +55,35 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background 0.3s;
+        }
+        .logout-form button:hover {
+            background: #c82333;
         }
         .footer {
             margin-top: 30px;
             font-size: 12px;
             color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>Bienvenue</h1>
+    <h1> Bienvenue</h1>
     <div class="author">Issam ABOUSSAKKINE</div>
-    <p>Vous etes connecte avec succes.</p>
+    <p>Vous êtes connecté avec succès.</p>
 
     <div class="links">
-        <a href="/user/espace">Espace User</a>
-        <a href="/admin/espace">Espace Admin</a>
-        <a href="/manager/espace">Espace Manager</a>
+        <a href="/user/espace"> Espace User</a>
+        <a href="/admin/espace"> Espace Admin</a>
+        <a href="/manager/espace"> Espace Manager</a>
     </div>
 
     <div class="logout-form">
         <form action="/logout" method="post">
-            <button type="submit">Se deconnecter</button>
+            <button type="submit"> Se déconnecter</button>
         </form>
     </div>
 

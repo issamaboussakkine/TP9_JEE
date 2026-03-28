@@ -1,43 +1,66 @@
 package ma.fstg.security.web;
 
+// Issam : Imports Spring MVC
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-// Auteur : Issam ABOUSSAKKINE
+/**
+ * Issam : Contrôleur principal pour la gestion des pages
+ * Auteur : Issam ABOUSSAKKINE
+ * Date : 28 Mars 2026
+ */
 @Controller
 public class HomeController {
 
-    // Page d'accueil - redirige vers accueil.html
+    /**
+     * Issam : Page d'accueil - Redirection vers accueil.html
+     * URL : /
+     */
     @GetMapping("/")
     public String home() {
         return "accueil";
     }
 
-    // Page d'accueil apres connexion
+    /**
+     * Issam : Page d'accueil après connexion
+     * URL : /accueil
+     */
     @GetMapping("/accueil")
     public String accueil() {
         return "accueil";
     }
 
-    // Page de connexion personnalisee
+    /**
+     * Issam : Page de connexion personnalisée
+     * URL : /login
+     */
     @GetMapping("/login")
     public String login() {
         return "login";
     }
 
-    // Espace USER - accessible aux roles USER et ADMIN
+    /**
+     * Issam : Espace USER - accessible aux rôles USER et ADMIN
+     * URL : /user/espace
+     */
     @GetMapping("/user/espace")
     public String userEspace() {
         return "user_espace";
     }
 
-    // Espace ADMIN - accessible uniquement au role ADMIN
+    /**
+     * Issam : Espace ADMIN - accessible uniquement au rôle ADMIN
+     * URL : /admin/espace
+     */
     @GetMapping("/admin/espace")
     public String adminEspace() {
         return "admin_espace";
     }
 
-    // Espace MANAGER - accessible uniquement au role MANAGER
+    /**
+     * Issam : Espace MANAGER - accessible uniquement au rôle MANAGER
+     * URL : /manager/espace
+     */
     @GetMapping("/manager/espace")
     public String managerEspace() {
         return "manager_espace";

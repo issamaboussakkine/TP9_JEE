@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Issam : Page de connexion personnalisée -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -98,14 +99,17 @@
     <h2>Authentification</h2>
     <div class="author">Issam ABOUSSAKKINE</div>
 
+    <!-- Issam : Message d'erreur -->
     <div th:if="${param.error}" class="error">
         Identifiant ou mot de passe incorrect
     </div>
 
+    <!-- Issam : Message de déconnexion -->
     <div th:if="${param.logout}" class="success">
         Déconnexion réussie
     </div>
 
+    <!-- Issam : Formulaire de connexion -->
     <form th:action="@{/login}" method="post">
         <div class="input-group">
             <label>Nom d'utilisateur</label>
@@ -120,6 +124,7 @@
         <button type="submit">Se connecter</button>
     </form>
 
+    <!-- Issam : Informations des comptes de test -->
     <div class="info">
         <strong>Comptes de test</strong><br>
         issam_admin / issam123 (Administrateur)<br>
